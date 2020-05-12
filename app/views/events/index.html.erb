@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Description</th> 
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= link_to event.title, event %></td>
+        <td><%= event.description%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

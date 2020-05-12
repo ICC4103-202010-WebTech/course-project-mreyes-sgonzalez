@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Organizations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organizations.each do |organization| %>
+      <tr>
+        <td><%= link_to organization.name, organization %></td>
+        <td><%= organization.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

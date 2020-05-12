@@ -1,0 +1,15 @@
+<h4>Upcoming Events This Week</h4>
+
+<table>
+  <thead>
+  <th>Event</th>
+  </thead>
+  <tbody>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.title %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
