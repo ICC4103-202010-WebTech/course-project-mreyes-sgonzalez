@@ -1,4 +1,5 @@
 class MessageUser < ApplicationRecord
   belongs_to :user
-  has_one :message
+  has_many :messages
+    #has_one :message
 end

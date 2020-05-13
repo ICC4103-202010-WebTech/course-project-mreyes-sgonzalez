@@ -2,10 +2,10 @@
 
 one:
   user: one
-  comment: MyText
+  text_comment_reply: MyText
   comment: one
 
 two:
   user: two
-  comment: MyText
+  text_comment_reply: MyText
   comment: two

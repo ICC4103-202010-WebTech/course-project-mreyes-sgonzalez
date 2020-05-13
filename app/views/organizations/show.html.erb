@@ -1,3 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', organizations_path %>
+<table>
+  <thead>
+  <th>Name</th>
+  <th>Description</th>
+  </thead>
+
+  <tbody>
+  <td><%= @organizations.name %></td>
+  <td><%= @organizations.description %></td>
+  <td><button class="btn btn-primary" id="edit_button_event">Edit</button></td>
+  <td><button class="btn btn-primary" id="delete_button_event">Delete</button></td>
+
+  </tbody>
+</table>
+
+
+<table>
+  <h2>Organization List User</h2>
+  <td><button class="btn btn-primary" id="add_button_event">Add</button></td>
+  <tbody>
+  <% @member.each do |member| %>
+    <tr>
+      <td><%= member.user.profile.name %></td>
+      <td><button class="btn btn-primary">Edit</button></td>
+      <td><button class="btn btn-primary" id="delete_button_event">Delete</button></td>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
+<button class="btn btn-primary" id="back_button"><%= link_to 'Back', organizations_path %></button>
