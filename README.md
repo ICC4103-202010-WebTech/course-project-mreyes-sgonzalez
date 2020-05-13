@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Link Postman Project assignment #2:
+https://www.getpostman.com/collections/3b725caec89f13a7193d
