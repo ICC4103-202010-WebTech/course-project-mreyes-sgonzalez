@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+link de Postman:
+
+https://www.getpostman.com/collections/3b725caec89f13a7193d

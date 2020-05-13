@@ -11,11 +11,6 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @events = Event.find(params[:id])
-    Profile.includes(:user).all
-    @event_join_users = Event.includes(:user).find(params[:id])
-    @event_comments = Event.includes(:comments).find(params[:id]).comments
-    @event_list_user = EventListUser.includes(:user).where(event_id:params[:id])
-
   end
 
   # GET /events/new

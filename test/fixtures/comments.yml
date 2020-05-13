@@ -2,10 +2,10 @@
 
 one:
   user: one
-  text_comment: MyText
+  comment: MyText
   event: one
 
 two:
   user: two
-  text_comment: MyText
+  comment: MyText
   event: two
