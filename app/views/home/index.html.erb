@@ -1,12 +1,18 @@
-<h4>Upcoming Events This Week</h4>
 
+<div class="home_photo">
+  <%=image_tag("ph2.jpg", alt: "Home photo", width: 1150)%>
+</div>
+
+<h2>Upcoming Events!</h2>
 <table>
   <thead>
-  <th>Event</th>
+  <th>Events</th>
   </thead>
   <tbody>
+  <% i=0 %>
   <% @events.each do |event| %>
     <tr>
+      <td><%= i+=1 %></td>
       <td><%= event.title %></td>
     </tr>
   <% end %>
