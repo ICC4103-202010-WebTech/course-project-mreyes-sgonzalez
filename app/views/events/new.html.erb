@@ -1,5 +1,36 @@
 <h1>New Event</h1>
 
-<%= render 'form', event: @event %>
+<div class="row">
+  <div class="col-sm-12">
+    <%= form_with model: @event do |form| %>
+    Level 1: .col-sm-9
+    <div class="row">
+      <div class="col-md-4">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+        Level 2: .col-xs-8 .col-sm-6
+      </div>
+      <div class="col-md-3 col-md-offset-3">
+        <%= form.label :description %>
+        <%= form.text_area :description, class: "form-control" %>
+        Level 2: .col-xs-4 .col-sm-6
+      </div>
+    </div>
+    <div class="row">
+      <div  class="form-group">
+        <%= form.label :start_date %>
+        <%= form.datetime_local_field :start_date %>
+      </div>
+    </div>
+    <%= form.submit "Create", class: ["btn", "btn-primary"] %>
+    <%= link_to "Back", :back, class: ["btn", "btn-secondary"] %>
+    <% end %>
+  </div>
+  <%= link_to 'Back', events_path %>
+</div>
 
-<%= link_to 'Back', events_path %>
+
+
+
+
+

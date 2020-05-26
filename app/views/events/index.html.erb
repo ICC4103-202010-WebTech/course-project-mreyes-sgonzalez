@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
-<td><button class="btn btn-primary" id="add_button_event">Add</button></td>
+<td><%= link_to "Add", new_event_path, class: ["btn", "btn-primary"] %></td>
 <table>
   <thead>
     <th>Title</th>
