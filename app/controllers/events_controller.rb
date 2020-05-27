@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @guests = Profile.all
   end
 
   # GET /events/1/edit

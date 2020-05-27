@@ -1,32 +1,81 @@
-<h1>New Event</h1>
 
-<div class="row">
-  <div class="col-sm-12">
-    <%= form_with model: @event do |form| %>
-    Level 1: .col-sm-9
-    <div class="row">
-      <div class="col-md-4">
+
+<div class="container">
+  <h1>New Event</h1>
+  <%= form_with model: @event do |form| %>
+  <div class="row">
+    <div class="col-6 ">
+      <div class="form-group">
         <%= form.label :name %>
         <%= form.text_field :name, class: "form-control" %>
-        Level 2: .col-xs-8 .col-sm-6
       </div>
-      <div class="col-md-3 col-md-offset-3">
+    </div>
+    <div >
+      <div class="form-check ">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Private Event
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
         <%= form.label :description %>
         <%= form.text_area :description, class: "form-control" %>
-        Level 2: .col-xs-4 .col-sm-6
       </div>
     </div>
-    <div class="row">
-      <div  class="form-group">
-        <%= form.label :start_date %>
-        <%= form.datetime_local_field :start_date %>
-      </div>
-    </div>
-    <%= form.submit "Create", class: ["btn", "btn-primary"] %>
-    <%= link_to "Back", :back, class: ["btn", "btn-secondary"] %>
-    <% end %>
   </div>
-  <%= link_to 'Back', events_path %>
+
+    <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <%= form.label :location %>
+        <%= form.text_area :location, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="form-group">
+        <%= form.label :start_date_option %>
+        <%= form.datetime_local_field :start_date %>
+        <button class="btn btn-primary">Add Date</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <label>Invite Your Guests</label>
+      <select class="custom-select" multiple>
+      <% @guests.each do |guest| %>
+        <option selected><%=guest.name %> <%=guest.last_name  %></option>
+      <% end  %>
+    </select>
+    <button class="btn btn-primary">Invite Guest </button>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <%= form.submit "Create Event", class: ["btn", "btn-primary"] %>
+
+    </div>
+    <div class="col-2 offset-3">
+      <%= link_to 'Back', events_path,class:["btn","btn-secondary"] %>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 
