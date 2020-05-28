@@ -4,13 +4,13 @@
   <thead>
   <th>Name</th>
   <th>Description</th>
+  <td><button class="btn btn-primary mx-4" id="edit_button_event">Edit</button></td>
   </thead>
 
   <tbody>
   <td><%= @organizations.name %></td>
   <td><%= @organizations.description %></td>
-  <td><button class="btn btn-primary" id="edit_button_event">Edit</button></td>
-  <td><button class="btn btn-primary" id="delete_button_event">Delete</button></td>
+
 
   </tbody>
 </table>
@@ -23,8 +23,6 @@
   <% @member.each do |member| %>
     <tr>
       <td><%= member.user.profile.name %></td>
-      <td><button class="btn btn-primary">Edit</button></td>
-      <td><button class="btn btn-primary" id="delete_button_event">Delete</button></td>
     </tr>
   <% end %>
   </tbody>

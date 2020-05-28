@@ -54,11 +54,11 @@
         <option selected><%=guest.name %> <%=guest.last_name  %></option>
       <% end  %>
     </select>
-    <button class="btn btn-primary">Invite Guest </button>
+    <button class="btn btn-primary top-buffer offset-9  ">Invite Guest </button>
     </div>
 
   </div>
-  <div class="row">
+  <div class="row top-buffer">
     <div class="col-6">
       <div class="custom-file">
         <input type="file" class="custom-file-input" id="customFile">
@@ -66,7 +66,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row top-buffer">
     <div class="col-2">
       <%= form.submit "Create Event", class: ["btn", "btn-primary"] %>
 
