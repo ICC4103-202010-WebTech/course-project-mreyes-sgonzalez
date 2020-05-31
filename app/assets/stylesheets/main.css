@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #ffffff;
+    color: #fbfffd;
 }
 
 a {
@@ -80,4 +80,8 @@ ul#navbar li a:hover {
 td,th {
     padding: 0.2em;
     text-align: left;
+}
+
+#div-test{
+    background: #1e7e34;
 }

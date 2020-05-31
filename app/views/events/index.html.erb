@@ -2,6 +2,26 @@
 
 <h1>Events</h1>
 <td><%= link_to "Add", new_event_path, class: ["btn", "btn-primary"] %></td>
+
+<div class="row">
+  <% @events.each do |event| %>
+    <!-- Begin: Move this to a partial view -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <div class="card-body">
+          <p class="card-text"><%= link_to event.title, event %></p>
+          <p class="card-text"><%= event.description %></p>
+        </div>
+      </div>
+      <!-- End: Move this to a partial view -->
+    </div>
+  <% end %>
+</div>
+
+
+
+
 <table>
   <thead>
     <th>Title</th>

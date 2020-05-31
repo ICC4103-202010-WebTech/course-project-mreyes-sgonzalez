@@ -1,21 +1,25 @@
 
-<div class="home_photo">
-  <%=image_tag("ph2.jpg", alt: "Home photo", width: 1150)%>
+<div class="col-md-12">
+  <%=image_tag("ph2.jpg", alt: "Home photo", width: "100%")%>
 </div>
 
-<h2>Upcoming Events!</h2>
-<table>
-  <thead>
-  <th>Events</th>
-  </thead>
-  <tbody>
-  <% i=0 %>
-  <% @events.each do |event| %>
-    <tr>
-      <td><%= i+=1 %></td>
-      <td><%= event.title %></td>
-    </tr>
-  <% end %>
+<div class="row ml-0 mt-3">
+  <h2>Upcoming Events</h2>
+</div>
 
-  </tbody>
-</table>
+
+
+<div class="row">
+  <% @events.each_with_index do |event, i| %>
+    <!-- Begin: Move this to a partial view -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <div class="card-body">
+          <p class="card-text"><%= link_to event.title, event %></p>
+        </div>
+      </div>
+      <!-- End: Move this to a partial view -->
+    </div>
+  <% end %>
+</div>
