@@ -1,0 +1,36 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <%=@current_profile.name %>
+      <%=@current_profile.last_name %>
+    </div>
+    <div class="col-3">
+      Date of Birth<%=@current_profile.dob %>
+    </div>
+    <div class="col-lg-6 ">
+      <label> Phone: <%= @current_profile.phone %></label>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="card-header"><h2><%=@profile.name%>'s Created Events</h2> </div>
+    <div class="container">
+
+      <ul class="list-group">
+        <%@created_events.each do |ce| %>
+          <li class="list-group-item"> ce.title</li>
+        <% end %>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<%= link_to 'Back', profiles_path %>
