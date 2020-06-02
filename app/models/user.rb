@@ -1,3 +1,5 @@
+
+
 class User < ApplicationRecord
   has_one :profile
   has_many :members
@@ -10,6 +12,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :comment_replies
 
+  validates :username, presence: true
+  validates :password, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :admin, presence: true
 
 
   #belongs_to :member
