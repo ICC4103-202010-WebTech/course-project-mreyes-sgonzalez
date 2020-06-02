@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   resources :comments, defaults: { format: :html }
 
 
-  resources :organizations, only: [:show, :index , :new]
+  resources :organizations, only: [:show, :index , :new, :edit]
   resources :profiles   #, only: [:show, :index, :edit]
 end

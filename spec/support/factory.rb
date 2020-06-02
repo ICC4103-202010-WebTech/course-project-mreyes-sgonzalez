@@ -27,19 +27,19 @@ FactoryBot.define do
   end
 
   factory :random_member, class: Member do
-    association :user_id, factory: :random_user.id
-    association :organization_id, factory: :random_organization.id
+    association :user, factory: :random_user.id
+    association :organization, factory: :random_organization.id
     rol {Faker::Job.position}
   end
 
   factory :random_event_list_user, class: EventListUser do
-    association :user_id, factory: :random_user.id
-    association :event_id, factory: :random_event.id
+    association :user, factory: :random_user.id
+    association :event, factory: :random_event.id
   end
 
   factory :random_event_list_organization, class: EventListOrganization do
-    association :organization_id, factory: :random_organization.id
-    association :event_id, factory: :random_event.id
+    association :organization, factory: :random_organization.id
+    association :event, factory: :random_event.id
 
   end
 
