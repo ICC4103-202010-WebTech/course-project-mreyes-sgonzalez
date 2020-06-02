@@ -2,23 +2,19 @@
 
 <h1>Organizations</h1>
 <td><button class="btn btn-primary" id="add_button_event"><%=link_to "Add", new_organization_path %></button></td>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @organizations.each do |organization| %>
-      <tr>
-        <td><%= link_to organization.name, organization %></td>
-        <td><%= organization.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<div class="row">
+  <% @organizations.each do |organization| %>
+    <div class="col-md-4" id="center-div-home">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <div class="card-body">
+          <p class="card-text"><%= link_to organization.name, organization %></p>
+          <p class="card-text" id="text-div-black"><%= organization.description %></p>
+          <button class="btn btn-primary" id="edit_button_event"><%= link_to "Edit",  edit_path %></button>
+          <button class="btn btn-primary" id="delete_button_event">Delete</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

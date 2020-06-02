@@ -7,6 +7,9 @@ class ProfilesController < ApplicationController
     @profiles = Profile.all
   end
 
+  def account
+    @profile = Profile.first
+  end
   # GET /profiles/1
   # GET /profiles/1.json
   def show
@@ -23,6 +26,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    @profile = profile.find(params[:id])
   end
 
   # POST /profiles
@@ -73,6 +77,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.fetch(:profile, {})
+      params.fetch(:profile, {}).permit(:name, :last_name, :dob, :phone, :address)
     end
 end

@@ -82,6 +82,42 @@ td,th {
     text-align: left;
 }
 
+/*
+nuestro css e3
+ */
+#div-principal-text{
+    padding: 5%;
+}
+#first-div-particular-event{
+    position: relative;
+    left: 10%;
+}
+#second-div-particular-event{
+    position: relative;
+    left: 10%;
+}
+
 #div-test{
     background: #1e7e34;
+}
+
+#text-div-black{
+    color: black;
+    font-family: Calibri;
+}
+#text-div-blue{
+    color: darkblue;
+    font-family: Courier New;
+}
+#center-div{
+    position: relative;
+    left: 47%;
+}
+#center-div-home{
+    position: relative;
+    left: 12%;
+}
+#center-div-home-image{
+    position: relative;
+    left: 13%;
 }

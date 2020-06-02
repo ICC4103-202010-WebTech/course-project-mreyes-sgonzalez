@@ -1,36 +1,39 @@
-
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="row">
-    <div class="col-2">
-      <%=@current_profile.name %>
-      <%=@current_profile.last_name %>
-    </div>
-    <div class="col-3">
-      Date of Birth<%=@current_profile.dob %>
-    </div>
-    <div class="col-lg-6 ">
-      <label> Phone: <%= @current_profile.phone %></label>
-    </div>
+<div class="row">
+  <!-- Begin: Move this to a partial view -->
+  <div class="col-md-4" id="center-div">
+    <div class="card mb-4 shadow-sm">
+      <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
 
-  </div>
-  <div class="row">
-    <div class="card-header"><h2><%=@profile.name%>'s Created Events</h2> </div>
-    <div class="container">
-
-      <ul class="list-group">
-        <%@created_events.each do |ce| %>
-          <li class="list-group-item"> ce.title</li>
+      <div class="card-body">
+        <%= form_with model: @profile do |form| %>
+          <div class="form-group" id="text-div-blue">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: "form-control" %>
+          </div>
+          <div class="form-group" id="text-div-blue">
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name, class: "form-control" %>
+          </div>
+          <div class="form-group" id="text-div-blue">
+            <%= form.label :date_of_birth %>
+            <%= form.datetime_local_field :dob %>
+          </div>
+          <div class="form-group" id="text-div-blue">
+            <%= form.label :phone %>
+            <%= form.text_field :phone %>
+          </div>
+          <div class="form-group" id="text-div-blue">
+            <%= form.label :address %>
+            <%= form.text_field :address %>
+          </div>
+          <div class="form-group">
+            <%= form.submit "Save Changes", class: ["btn", "btn-primary"] %>
+          </div>
         <% end %>
-      </ul>
-
+      </div>
     </div>
-
+    <!-- End: Move this to a partial view -->
   </div>
-
 </div>
-
-
-
-<%= link_to 'Back', profiles_path %>

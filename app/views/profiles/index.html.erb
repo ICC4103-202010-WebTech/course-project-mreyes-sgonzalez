@@ -3,31 +3,22 @@
 <h1>Profiles</h1>
 <td><button class="btn btn-primary" id="add_button_event">Add</button></td>
 <link rel="stylesheet" type="text/css" href="event_id_view.css">
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Last Name</th>
-      <th>Phone</th>
-      <th>Date of Birth</th>
-      <th>Address</th>
-    </tr>
-  </thead>
-  <!--TODO add link to profile pages-->
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.last_name %></td>
-        <td><%= profile.phone %></td>
-        <td><%= profile.dob %></td>
-        <td><%= profile.address %></td>
-        <td><button class="btn btn-primary" id="edit_button_event">Edit</button></td>
-        <td><button class="btn btn-primary" id="delete_button_event">Delete</button></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
+<div class="row">
+  <% @profiles.each do |profile| %>
+    <div class="col-md-4" id="center-div-home">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <div class="card-body">
+          <p class="card-text"><%= link_to profile.name, profile %></p>
+          <p class="card-text" id="text-div-black"><%= profile.last_name %></p>
+          <p class="card-text" id="text-div-black"><%= profile.phone %></p>
+          <p class="card-text" id="text-div-black"><%= profile.dob %></p>
+          <p class="card-text" id="text-div-black"><%= profile.address %></p>
+          <button class="btn btn-primary" id="edit_button_event"><%= link_to "Edit",  edit_path %></button>
+          <button class="btn btn-primary" id="delete_button_event">Delete</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
