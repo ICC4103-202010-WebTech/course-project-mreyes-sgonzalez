@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # USERS
 #
+let(:factory){create_list(:random_userm,5)}
+#
+#
 
 user1 = User.create!(email: "email1@gmail.com", password: "abc12d3", username: "username1", admin: true)
 user2 = User.create!(email: "email2@gmail.com", password: "abc12e3", username: "username2", admin: false)
