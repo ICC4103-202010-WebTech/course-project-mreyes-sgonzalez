@@ -1,39 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-  <div class="container">
-    <div class="page-header">
-      <h1><%=@profile.name%>'s Profile</h1>
+
+<div class="row" id="second_div_events">
+  <div class="col-md-4">
+    <div class="card mb-4 shadow-sm">
+      <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+      <div class="card-body">
+        <p class="card-text" id="text-div-black"><%= @profile.name %></p>
+        <p class="card-text" id="text-div-black"><%= @profile.last_name %></p>
+        <p class="card-text" id="text-div-black"><%= @profile.dob %></p>
+        <p class="card-text" id="text-div-black"><%= @profile.phone %></p>
+        <p class="card-text" id="text-div-black"><%= @profile.address %></p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Edit", edit_profile_path(@profile) %></button>
+          </div>
+        </div>
+      </div>
+      <!-- End: Move this to a partial view -->
     </div>
-
-    <div class="row">
-
-      <div class="col-2">
-        <%=@profile.name %> <%=@profile.last_name %>
-      </div>
-      <div class="col-3">
-        Date of Birth<%=@profile.dob %>
-      </div>
-      <div class="col-lg-6 ">
-        <label> Phone: <%= @profile.phone %></label>
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="card-header"><h2><%=@profile.name%>'s Created Events</h2> </div>
-      <div class="container">
-
-        <ul class="list-group">
-          <%@created_events.each do |ce| %>
-          <li class="list-group-item"> ce.title</li>
-          <% end %>
-        </ul>
-
-      </div>
-
-    </div>
-
+    <%= link_to "Back", events_path, class: ["btn", "btn-primary"] %>
   </div>
+</div>
 
 
 
-<%= link_to 'Back', profiles_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

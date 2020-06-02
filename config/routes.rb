@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
   get '/profile/account' => 'profiles#account', as: :account
-  get '/profile/edit' => 'profiles#edit', as: :edit
+
   # Limit possible actions on resources to index and show...
 
   namespace :api, defaults: { format: :json } do
@@ -23,5 +23,5 @@ Rails.application.routes.draw do
 
 
   resources :organizations, only: [:show, :index , :new]
-  resources :profiles, only: [:show, :index]
+  resources :profiles   #, only: [:show, :index, :edit]
 end

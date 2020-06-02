@@ -96,6 +96,16 @@ nuestro css e3
     position: relative;
     left: 10%;
 }
+#div-event-list-user{
+    background: #4e555b;
+}
+#div-comments-event{
+    background: #4e555b;
+}
+
+
+
+
 
 #div-test{
     background: #1e7e34;
