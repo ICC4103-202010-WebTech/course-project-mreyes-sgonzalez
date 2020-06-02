@@ -85,9 +85,22 @@ td,th {
 /*
 nuestro css e3
  */
+#add-button{
+    color: white;
+}
 #div-principal-text{
     padding: 5%;
 }
+#comments-home{
+    position: relative;
+    left: 12%;
+}
+#text-comments-home{
+    color: #2e2e2e;
+    background: #aaabac;
+}
+
+
 #first-div-particular-event{
     position: relative;
     left: 10%;

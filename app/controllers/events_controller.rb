@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @events = Event.find(params[:id])
+    @event_user_name = @events.user.profile.name
+    @event_user_last_name = @events.user.profile.last_name
     Profile.includes(:user).all
     @event_join_users = Event.includes(:user).find(params[:id])
     @event_comments = Event.includes(:comments).find(params[:id]).comments
@@ -26,6 +28,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @events = Event.find(params[:id])
   end
 
   # POST /events
@@ -76,6 +79,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.fetch(:event, {})
+      params.fetch(:event, {}).permit(:title, :description, :user_id, :location, :date)
     end
 end
