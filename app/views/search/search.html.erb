@@ -1,0 +1,24 @@
+<p> Search page</p>
+
+<%if @organization!=nil %>
+  <label>Organizacion</label>
+  <ul>
+    <%@organization.each do |o| %>
+      <li> <%=o.name %></li>
+    <%end %>
+
+  </ul>
+<%end %>
+
+
+<%if @profile!=nil or @user!=nil %>
+  <label>Perfiles</label>
+  <ul>
+      <%@profile.each do |p| %>
+        <li> <%=p.name %></li>
+      <%end %>
+      <%@user.each do |u| %>
+        <li> <%=u.username %></li>
+      <% end %>
+  </ul>
+<%end %>
