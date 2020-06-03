@@ -11,8 +11,10 @@
         <div class="card-body">
           <p class="card-text"><%= link_to organization.name, organization %></p>
           <p class="card-text" id="text-div-black"><%= organization.description %></p>
-          <button class="btn btn-primary" id="edit_button_event"><%= link_to "Edit",  edit_organization_path(organization) %></button>
-          <button class="btn btn-primary" id="delete_button_event">Delete</button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-info"><%= link_to "View", organization %></button>
+            <button type="button" class="btn btn-sm btn-outline-warning"><%= link_to "Edit",  edit_organization_path(organization) %></button>
+          </div>
         </div>
       </div>
     </div>

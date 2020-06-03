@@ -4,7 +4,8 @@
   <div>
     <h1>Events</h1>
     <p>In this section we can find all the events there are, we can see the title along with its description.
-      Pressing each event leads us to the event page where we can see your photos and a greater amount of information</p>
+      Pressing each event leads us to the event page where we can see your photos and a greater amount of information
+    </p>
     <p>
       We can create events with the add button
     </p>
@@ -27,8 +28,8 @@
           <p class="card-text"><%= link_to event.title, event %></p>
           <p class="card-text" id="text-div-black"><%= event.description %></p>
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "View", event %></button>
-            <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Edit", edit_event_path(event) %></button>
+            <button type="button" class="btn btn-sm btn-outline-info"><%= link_to "View", event %></button>
+            <button type="button" class="btn btn-sm btn-outline-warning"><%= link_to "Edit", edit_event_path(event) %></button>
           </div>
         </div>
       </div>
