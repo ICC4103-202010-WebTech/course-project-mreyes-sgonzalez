@@ -14,6 +14,17 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @profile = Profile.find(params[:id])
+    @events = Event.all
+    @event_user_invited = EventListUser.where(user_id: params[:id])
+    @created_events = @events.where(user_id: params[:id])
+
+
+
+
+
+
+
+
     #TODO: query for all events created by user :id
     #@created_events=Event.find(user_id: @profile.user_id )
     # TODO: query for all event user :id has been inveted to

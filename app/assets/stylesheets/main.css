@@ -85,6 +85,9 @@ td,th {
 /*
 nuestro css e3
  */
+#black-text{
+    color: black;
+}
 #add-button{
     color: white;
 }
@@ -97,7 +100,11 @@ nuestro css e3
 }
 #text-comments-home{
     color: #2e2e2e;
-    background: #aaabac;
+    background: #e0e1e2;
+}
+#centre-data-profile{
+    position: relative;
+    left: 11%;
 }
 
 

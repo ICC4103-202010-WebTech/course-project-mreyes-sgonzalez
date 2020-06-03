@@ -1,8 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
-<td><button class="btn btn-primary" id="add_button_event">Add</button></td>
-<link rel="stylesheet" type="text/css" href="event_id_view.css">
+<div class="row ml-0 mt-3" id="div-principal-text">
+  <div>
+    <h1>Profiles</h1>
+    <p>In this section we can find all the profiles there are, we can see the title along with its description.
+      Pressing each event leads us to the profile page where we can see your photos and a greater amount of information
+    </p>
+    <p>
+      We can create profiles with the add button
+    </p>
+  </div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group">
+      <button class="btn btn-success btn-lg" id="add-button"><%= link_to "Add", new_profile_path%></button>
+    </div>
+  </div>
+</div>
+
 
 <div class="row">
   <% @profiles.each do |profile| %>
@@ -15,8 +29,10 @@
           <p class="card-text" id="text-div-black"><%= profile.phone %></p>
           <p class="card-text" id="text-div-black"><%= profile.dob %></p>
           <p class="card-text" id="text-div-black"><%= profile.address %></p>
-          <button class="btn btn-primary" id="edit_button_event"><%= link_to "Edit",  profile %></button>
-          <button class="btn btn-primary" id="delete_button_event">Delete</button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-info"><%= link_to "View", profile %></button>
+            <button type="button" class="btn btn-outline-warning"><%= link_to "Edit", edit_profile_path(profile) %></button>
+          </div>
         </div>
       </div>
     </div>
