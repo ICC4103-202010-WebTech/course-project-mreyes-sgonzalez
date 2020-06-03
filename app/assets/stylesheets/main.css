@@ -85,6 +85,20 @@ td,th {
 /*
 nuestro css e3
  */
+.col-10 {
+    height:350px;
+    overflow-y: scroll;
+}
+#profiles_list{
+    position: relative;
+    left: 15%;
+}
+
+
+
+p {
+    font-family: cursive;
+}
 #black-text{
     color: black;
 }
