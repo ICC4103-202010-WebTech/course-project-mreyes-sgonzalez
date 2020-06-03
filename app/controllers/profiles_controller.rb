@@ -9,7 +9,11 @@ class ProfilesController < ApplicationController
 
   def account
     @profile = Profile.first
+    @events = Event.all
+    @event_user_invited = EventListUser.where(user_id: 1)
+    @created_events = @events.where(user_id: 1)
   end
+
   # GET /profiles/1
   # GET /profiles/1.json
   def show
@@ -17,13 +21,6 @@ class ProfilesController < ApplicationController
     @events = Event.all
     @event_user_invited = EventListUser.where(user_id: params[:id])
     @created_events = @events.where(user_id: params[:id])
-
-
-
-
-
-
-
 
     #TODO: query for all events created by user :id
     #@created_events=Event.find(user_id: @profile.user_id )

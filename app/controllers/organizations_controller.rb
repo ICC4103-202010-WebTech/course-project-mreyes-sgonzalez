@@ -12,6 +12,9 @@ class OrganizationsController < ApplicationController
   def show
     @organizations = Organization.find(params[:id])
     @member = Member.includes(:user).where(organization_id:params[:id])
+    @public_events = Event.where(private: true)
+    @organization_events = EventListOrganization.where(organization_id: params[:id])
+      #@public_events = @organization_events.includes(:events).where(private: true)
   end
 
   # GET /organizations/new
