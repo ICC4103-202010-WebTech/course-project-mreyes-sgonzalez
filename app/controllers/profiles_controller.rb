@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
     @created_events = @events.where(user_id: params[:id])
 
     #TODO: query for all events created by user :id
-    #@created_events=Event.find(user_id: @profile.user_id )
+      # @created_events=Event.find(user_id: @profile.user_id )
     # TODO: query for all event user :id has been inveted to
     # @invited_events=Event_list_user.joins(:event).where(user_id: profile.id)
   end
