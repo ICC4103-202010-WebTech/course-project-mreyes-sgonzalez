@@ -14,6 +14,7 @@ class OrganizationsController < ApplicationController
     @member = Member.includes(:user).where(organization_id:params[:id])
     @public_events = Event.where(private: true)
     @organization_events = EventListOrganization.where(organization_id: params[:id])
+      @not_member=User.where("id NOT IN (?)", Member.includes(:user).where(organization_id: 1).ids).all
       #@public_events = @organization_events.includes(:events).where(private: true)
   end
 
@@ -29,7 +30,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations
   # POST /organizations.json
   def create
-    @organization = Organization.new(organization_params)
+    @organization = Organization.new(name: params[:name], description: params[:description])
 
     respond_to do |format|
       if @organization.save
@@ -67,10 +68,11 @@ class OrganizationsController < ApplicationController
   end
 
   def add_member
-    user=params[:hash[0]]
-    organization=params[:hash[1]]
+    #todo: pass propper params from organization\show
+    user=params[:user_id]
+    organization=params[:organization_id]
 
-    Member create!(user_id: user, organization_id: organization)
+    Member.create!(user_id: user, organization_id: organization)
 
 
   end
