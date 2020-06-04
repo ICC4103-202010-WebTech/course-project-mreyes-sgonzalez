@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   post 'organizations/new', to: "organizations#create"
   post 'organizations/add_member', to: "organizations#add_member"
 
+
   resources :profiles   #, only: [:show, :index, :edit]
 end

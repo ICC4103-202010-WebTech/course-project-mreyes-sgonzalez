@@ -10,11 +10,17 @@ class OrganizationsController < ApplicationController
   # GET /organizations/1
   # GET /organizations/1.json
   def show
+    @id=params[:id]
     @organizations = Organization.find(params[:id])
     @member = Member.includes(:user).where(organization_id:params[:id])
     @public_events = Event.where(private: true)
     @organization_events = EventListOrganization.where(organization_id: params[:id])
-      @not_member=User.where("id NOT IN (?)", Member.includes(:user).where(organization_id: 1).ids).all
+    #TODO: change hardcoded organization id
+    @not_member=User.where("id NOT IN (?)", Member.includes(:user).where(organization_id: params[:id]).ids).all
+
+    puts @member
+    puts @not_member
+
       #@public_events = @organization_events.includes(:events).where(private: true)
   end
 
@@ -30,10 +36,6 @@ class OrganizationsController < ApplicationController
   # POST /organizations
   # POST /organizations.json
   def create
-<<<<<<< HEAD
-    @organization = Organization.new(organization_params)
-=======
->>>>>>> 3d78b5deff327465cc5d9f68d59e273a7745707d
     @organization = Organization.new(name: params[:name], description: params[:description])
 
     respond_to do |format|
