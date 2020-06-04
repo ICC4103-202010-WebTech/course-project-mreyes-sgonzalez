@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/profile/account' => 'profiles#account', as: :account
   get '/search' => 'search#search', as: :search
+  post 'organizations/new', to: "organizations#create"
 
   # Limit possible actions on resources to index and show...
 
