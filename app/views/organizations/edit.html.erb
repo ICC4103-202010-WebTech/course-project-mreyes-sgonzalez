@@ -1,4 +1,11 @@
-<h1>Editing Organization</h1>
+<div class="row ml-0 mt-3" id="div-principal-text">
+  <div>
+    <h1>Editing Organization</h1>
+    <p>In this part you can modified the information about the organization.
+    </p>
+  </div>
+</div>
+
 <div class="card mb-3" id="first-div-particular-event">
   <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
   <div class="card-body">
@@ -18,7 +25,3 @@
     <% end %>
   </div>
 </div>
-<%= render 'form', organization: @organization %>
-
-<%= link_to 'Show', @organization %> |
-<%= link_to 'Back', organizations_path %>

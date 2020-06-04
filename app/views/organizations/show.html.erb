@@ -17,23 +17,13 @@
 </div>
 
 
-
-
-
-
-
-
-
-<div class="d-flex justify-content-between align-items-center">
-  <div class="btn-group"><div class="row" id="second-div-particular-event">
-    <div class="col-sm-6">
-      <div class="card" id="div-event-list-user">
+<div class="row" id="second-div-show-organization">
+  <div class="col-ml-6">
+    <div class="card" id="div-event-list-user">
+      <div class="card-body">
         <h2  id="text-div-black">Organization List User</h2>
-        <td><button class="btn btn-primary" id="add_button_event">Add</button></td>
-        <div class="card-body">
-
-
-
+        <button type="button" class="btn btn-success btn-lg btn-block">Add</button>
+        <div id="profile-scroll">
           <table class="table table-striped table-dark">
             <thead>
             <tr>
@@ -59,14 +49,12 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card" id="div-comments-event">
+  </div>
+  <div class="col-ml-6">
+    <div class="card" id="div-event-list-user">
+      <div class="card-body">
         <h2  id="text-div-black">Public Events</h2>
-        <td><button class="btn btn-primary" id="add_button_event">Add</button></td>
-        <div class="card-body">
-
-
-
+        <div id="profile-scroll">
           <table class="table table-striped table-dark">
             <thead>
             <tr>
@@ -89,7 +77,6 @@
                 <% end %>
               <%end %>
             <% end %>
-
             </tbody>
           </table>
         </div>
@@ -97,6 +84,6 @@
     </div>
   </div>
 </div>
-</div>
+<div>
   <button type="button" class="btn btn-outline-dark"><%= link_to "back", organizations_path %></button>
 </div>
