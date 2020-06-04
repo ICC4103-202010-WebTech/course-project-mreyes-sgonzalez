@@ -91,7 +91,16 @@ nuestro css e3
 }
 #profiles_list{
     position: relative;
-    left: 15%;
+    left: 17%;
+}
+#profile-view{
+    display: block;
+    position: relative;
+    left: 10%;
+}
+#profile-scroll{
+    height: 300px;
+    overflow-y: scroll;
 }
 
 
