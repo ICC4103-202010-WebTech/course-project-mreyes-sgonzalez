@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   resources :comments, defaults: { format: :html }
 
 
-  resources :organizations #, only: [:show, :index , :new, :edit, :path]
+  resources :organizations
+  post 'organizations/new', to: "organizations#create"
+  post 'organizations/add_member', to: "organizations#add_member"
+
   resources :profiles   #, only: [:show, :index, :edit]
 end
