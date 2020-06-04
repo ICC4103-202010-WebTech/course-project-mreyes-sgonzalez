@@ -66,6 +66,15 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def add_member
+    user=params[:hash[0]]
+    organization=params[:hash[1]]
+
+    Member create!(user_id: user, organization_id: organization)
+
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_organization

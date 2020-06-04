@@ -51,6 +51,7 @@
                 <td><%= member.user.profile.last_name %></td>
                 <td><button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "View",  profile_path(member.id) %></button></td></td>
                 <td><button class="btn btn-primary" id="delete_button_event">Delete</button></td>
+                <td><%= link_to "Add new Member", { controller: "organization_controller", action: "add", hash: {user => member.user.id ,organization =>member.organization.id } }, method: :post, class: ["btn", "btn-primary"] %></td>
               </tr>
             <%end %>
             </tbody>
