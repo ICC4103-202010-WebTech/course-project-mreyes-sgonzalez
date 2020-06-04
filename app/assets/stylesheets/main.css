@@ -102,7 +102,10 @@ nuestro css e3
     height: 300px;
     overflow-y: scroll;
 }
-
+#second-div-show-organization{
+    position: relative;
+    left: 11.5%;
+}
 
 
 p {
