@@ -10,11 +10,17 @@ class OrganizationsController < ApplicationController
   # GET /organizations/1
   # GET /organizations/1.json
   def show
+    @id=params[:id]
     @organizations = Organization.find(params[:id])
     @member = Member.includes(:user).where(organization_id:params[:id])
     @public_events = Event.where(private: true)
     @organization_events = EventListOrganization.where(organization_id: params[:id])
+    #TODO: change hardcoded organization id
     @not_member=User.where("id NOT IN (?)", Member.includes(:user).where(organization_id: params[:id]).ids).all
+
+    # puts @member
+    # puts @not_member
+
       #@public_events = @organization_events.includes(:events).where(private: true)
     @profiles = Profile.all
 
