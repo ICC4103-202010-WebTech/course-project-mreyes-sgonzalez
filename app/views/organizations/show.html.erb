@@ -22,15 +22,33 @@
     <div class="card" id="div-event-list-user">
       <div class="card-body">
         <h2  id="text-div-black">Organization List User</h2>
+
         <select class="mdb-select w-100" multiple>
           <option value="" disabled selected>Add to Organization</option>
-          <%@not_member.each do |nm|%>
-            <option><%=nm.profile.name %> <%=nm.profile.last_name %></option>
+
+          <% if @member.length > 0 %>
+            <% @member.each do |list| %>
+              <% @profiles.each do |profiles|%>
+                <% if profiles.user_id != list.user_id %>
+                  <option><%= profiles.name %> <%= profiles.last_name %></option>
+                <% end %>>
+              <% end %>
+            <% end %>
           <% end %>
+
+
+          <% if @member.length == 0 %>
+            <% @profiles.each do |profiles|%>
+              <option><%= profiles.name %> <%= profiles.last_name %></option>
+            <% end %>
+          <% end %>
+
+
+
         </select>
 
 
-        <%= link_to "Add to Organization", { controller: 'organizations', action: 'add_member', user_id: 4, organization_id: 1}, method: :post, class: ["btn", "btn-primary","w-100","mb-5"] %>
+        <%= link_to "Add to Organization", { controller: 'organizations', action: 'add_member', user_id: 2, organization_id: 4}, method: :post, class: ["btn", "btn-primary","w-100","mb-5"] %>
 
         <div id="profile-scroll">
           <table class="table table-striped table-dark">
