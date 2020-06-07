@@ -21,6 +21,12 @@
         <h2>Images:</h2>
         <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
       </li>
+      </li>
+      <li class="list-group-item">
+        <h2>Invite</h2>
+        <p>If you want to invite an user pleas press the button be allow</p>
+        <button type="button" class="btn btn-primary">Invite</button>
+      </li>
     </ul>
   </div>
 
@@ -58,10 +64,36 @@
           </div>
         </div>
       </li>
+
+
       <li class="list-group-item">
         <h2>Videos:</h2>
         <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
       </li>
+
+      <li class="list-group-item">
+        <h2>Date Vote</h2>
+        <p><%= Time.now %> this will en in 5 days!</p>
+        <p>Please choose the date option that you prefer</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">6-7-20 Date</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+          <label class="form-check-label" for="defaultCheck2">23-6-20 Date</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">11-9-20 Date</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">5-12-20 Date</label>
+        </div>
+
+      </li>
+
       <li class="list-group-item">
         <h3>Options for the event:</h3>
         <div class="d-flex justify-content-between align-items-center">
