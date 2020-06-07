@@ -59,4 +59,7 @@ We still need to improve to make it work optimally:
 -4.8
 -5.3
 and admin routes.
+Our database could not be enlarged any more, because it did not leave us ruby ​​mine
+
+
 
