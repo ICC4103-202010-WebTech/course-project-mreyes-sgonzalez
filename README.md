@@ -40,3 +40,23 @@ the events, comments, profiles, organizaions, home page, Postman)
 
 Link Postman Project assignment #2:
 https://www.getpostman.com/collections/3b725caec89f13a7193d
+
+-----------------------------
+In this part of the work we managed to better show the views of our website, 
+as seen now is what an administrator should see within the web application.
+For point 5 of the creation of the populate fake data we had problems with 
+the implementation of these, therefore we enlarged the seed of our work, since 
+they told us that we could do this in the forum.
+We are missing being able to correctly add the comments in the event part, 
+along with terminating the date voting in a functional way, in addition to the fact
+ that the search engine will work with a subpart of the description or name (for the 
+search engine to work you must enter the word and press enter as it appears there).
+We still need to improve to make it work optimally:
+-4.3
+-4.4
+-4.5
+-4.6
+-4.8
+-5.3
+and admin routes.
+
