@@ -1,3 +1,36 @@
+<div class="card-results" id="black-text">
+  <div class="card-body">
+    <h5 class="card-title">Results</h5>
+    <p>The following list show the results by key words</p>
+    <div class="results-scroll">
+      <ul class="list-group list-group-flush">
+        <%@events_by_keyword.each do |e| %>
+          <li class="list-group-item"><%=e.title %> <button type="button" class="btn btn-outline-info btn-sm"><%= link_to "View", e %></button></li>
+        <%end %>
+
+        <%@organizations_by_keyword.each do |o| %>
+          <li class="list-group-item"><%=o.name %> <button type="button" class="btn btn-outline-info btn-sm"><%= link_to "View", o %></button></li>
+        <%end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div>
+  <p></p>
+</div>
+
+
+
+
+
+
 
 <div class="card-deck" id="centre-data-profile">
   <div class="card" id="black-text">
@@ -27,7 +60,7 @@
           <% end %>
 
         </ul>
-        </div>
+      </div>
     </div>
   </div>
 
@@ -54,14 +87,14 @@
       <p> The following list show the profiles that you are searching</p>
       <div id="profile-scroll">
         <%if @profile!=nil or @user!=nil %>
-        <ul class="list-group list-group-flush">
-          <%@profile.each do |p| %>
-            <li class="list-group-item"><%=p.name %> <%=p.last_name %> <button type="button" class="btn btn-outline-info btn-sm"><%= link_to "View", p  %></button></li>
-        <%end %>
-          <%@user.each do |u| %>
-            <li class="list-group-item"><%=u.profile.name %></li>
-          <% end %>
-        </ul>
+          <ul class="list-group list-group-flush">
+            <%@profile.each do |p| %>
+              <li class="list-group-item"><%=p.name %> <%=p.last_name %> <button type="button" class="btn btn-outline-info btn-sm"><%= link_to "View", p  %></button></li>
+            <%end %>
+            <%@user.each do |u| %>
+              <li class="list-group-item"><%=u.profile.name %></li>
+            <% end %>
+          </ul>
         <% end %>
       </div>
     </div>

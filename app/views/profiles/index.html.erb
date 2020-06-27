@@ -26,19 +26,22 @@
         </thead>
         <tbody>
         <% @profiles.each do |profile| %>
-            <tr>
-              <td><%= link_to profile.name, profile %></td>
-              <td><%= profile.last_name %></td>
-              <td> <button type="button" class="btn btn-outline-info"><%= link_to "View", profile %></button> </td>
-              <td> <button type="button" class="btn btn-outline-warning"><%= link_to "Edit", edit_profile_path(profile) %></button> </td>
-            </tr>
+          <tr>
+            <td class="profile-name"><%= link_to profile.name, profile %></td>
+            <td><%= profile.last_name %></td>
+
+            <% if current_user.admin%>
+              <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "View", profile %></button> </td>
+              <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "Edit", edit_profile_path(profile) %></button> </td>
+            <% elsif current_user %>
+              <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "View", profile %></button> </td>
+            <% end %>
+          </tr>
         <% end %>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
-
 
 

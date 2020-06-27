@@ -1,0 +1,23 @@
+<div class="row ml-0 mt-3" id="div-principal-text">
+  <div>
+    <h1>Hello Sir <%@current_profile.profile.name%></h1>
+    <p>You are in the admin page. In this part you can do more things than in a current page.</p>
+  </div>
+</div>
+
+<div class="row">
+  <% @events.each_with_index do |event, i| %>
+    <div class="col-md-4" id="center-div-home">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <div class="card-body">
+          <p class="card-text"><%= link_to event.title, event %></p>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-info"><%= link_to "View", event %></button>
+            <button type="button" class="btn btn-sm btn-outline-warning"><%= link_to "Edit", edit_event_path(event) %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
