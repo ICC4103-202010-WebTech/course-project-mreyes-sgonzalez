@@ -2,6 +2,11 @@ class SearchController < ApplicationController
 
   def search
     ##Search 5.1,5.2,5.4,5.5
+    #
+    #
+    @events_by_keyword = Event.where("title like ? OR description like ?", "%#{params[:q]}%","%#{params[:q]}%" )
+    @organizations_by_keyword = Organization.where("name like ? OR description like ?", "%#{params[:q]}%","%#{params[:q]}%" )
+
     @organization=Organization.where(name: params[:q]) 
     @events = Event.all
     # TODO: Create 1 table merged from both queries

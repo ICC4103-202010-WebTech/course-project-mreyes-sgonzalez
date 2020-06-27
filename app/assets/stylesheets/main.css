@@ -13,6 +13,7 @@ body {
     color: #fbfffd;
 }
 
+
 a {
     color: #ff6514;
     text-decoration: none;
@@ -93,11 +94,7 @@ nuestro css e3
     position: relative;
     left: 17%;
 }
-#profile-view{
-    display: block;
-    position: relative;
-    left: 10%;
-}
+
 #profile-scroll{
     height: 300px;
     overflow-y: scroll;
@@ -141,9 +138,7 @@ EVENT SHOW
     background: rgba(78, 85, 91, 0.94);
 }
 
-p {
-    font-family: cursive;
-}
+
 #black-text{
     color: black;
 }
@@ -167,10 +162,7 @@ p {
 }
 
 
-#first-div-particular-event{
-    position: relative;
-    left: 10%;
-}
+
 #second-div-particular-event{
     position: relative;
     left: 10%;
@@ -205,3 +197,117 @@ p {
     position: relative;
     left: 13%;
 }
+
+
+
+/******************* E4  ******************************
+ */
+
+/*SEARCH*/
+.col-sm-4-search{
+    position: relative;
+    background: #007bff;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.search-position{
+    position: relative;
+    left: 72%;
+}
+.card-results { position: relative; left: 11%; display: -ms-flexbox; display: flex; -ms-flex-direction: column;
+    flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem; }
+.results-scroll{ height: 100px; overflow-y: scroll; }
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+.card-text-black-text{ color: black;}
+p {font-family: Georgia, sans-serif;}
+.btn-outline-success{color: white;}
+.btn-outline-success#add-button a {color: white;text-decoration:none;}
+.card-text#title a{color: #ff6514;font-size: 150%;}
+.btn-outline-secondary#view-edit-button a {color: #ff6514;text-decoration:none;}
+.profile-name a{color: white;text-decoration:none;}
+
+
+
+
+.organization-index-card{
+    background: #434343;
+}
+.organization-index-card p {
+    color: #b0b0b0;
+}
+
+.organization-show-card{background: #b0b0b0;}
+.organization-show-scroll{background: #434343;}
+.organization-show-scroll option{color: #b0b0b0;}
+
+.event-show-background{
+    background: #434343;
+}
+.event-show-text-color{
+    color: #b0b0b0;
+}
+#event-show-div-3{
+    position: relative;
+    left: 11.5%;
+    background: #434343;
+    color: #434343;
+}
+
+/*SING-IN*/
+.sing-in{
+    position: relative;
+    left: 12%;
+    background: #333333;
+}
+
+
+.card-sign-in{ border-radius: 10%;color: white;background: #2E2F30;}
+.card-body-sign-in{background: #2E2F30;}
+.card-sign-in-form{position: relative;left: 50%;display: -ms-flexbox;display: flex;
+    -ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;color: white;
+    background: #2E2F30;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.125);border-radius: 0.25rem;}
+
+/*SING-UP*/
+.card-sign-up-form{position: relative;left: 50%;display: -ms-flexbox;display: flex;
+    -ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;color: white;
+    background: #2E2F30;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.125);border-radius: 0.25rem;}
+
+
+
+/*HOME*/
+#home-photo-background{ background-image: url("home-6.jpg"); position: relative; left: 13%; }
+
+/*USER*/
+.user-scroll{height: 100px;overflow-y: scroll;}
+.user-scroll p {color: #b0b0b0;}
+.user-header{background: #2e2e2e;}
+.user{background: #434343;}
+
+/*EVENTS*/
+.event-index-card{background: #434343;}
+.event-index-card p {color: #b0b0b0;}
+
+/*PROFILES*/
+
+/*ORGANIZATION-SHOW*/
+.list-and-publicevents{ position: relative; background: #4e555b; }
+.card-user-list{ background: #4e555b; color: white; }
+.show-organization-body{ background: #4e555b; }
+.organization-show{ position: relative; left: 10%; background: #4e555b; }
+.card-header-organization-list-user{ background: #383d41; }
+#button-organization-show{ position: relative; left: 4%; }
+
+/*ACCOUNT-SHOW*/
+.row-account{ display: block; position: relative; left: 10%; background: #202122}
+.card-account-information{ background: #2e2e2e;}
+.card-account-event-invited{ background: #2e2e2e; }
+.account-line{ background: #2E2F30; }
+
+

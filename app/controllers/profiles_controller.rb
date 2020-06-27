@@ -8,10 +8,10 @@ class ProfilesController < ApplicationController
   end
 
   def account
-    @profile = Profile.first
+    @profile = Profile.find(current_user_.profile.id)
     @events = Event.all
-    @event_user_invited = EventListUser.where(user_id: 1)
-    @created_events = @events.where(user_id: 1)
+    @event_user_invited = EventListUser.where(user_id: current_user_.id)
+    @created_events = @events.where(user_id: current_user_.id)
   end
 
   # GET /profiles/1
