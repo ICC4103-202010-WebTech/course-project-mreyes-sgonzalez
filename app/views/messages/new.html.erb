@@ -1,0 +1,30 @@
+<div class="container offset-3 mt-5">
+  <%=form_with model: @messages do |f|%>
+    <div class="row">
+      <div class="col-6">
+
+          <div class="field ">
+            <%= f.label :message %><br />
+            <%= f.text_field :message%>
+          </div>
+
+      </div>
+      <div class="col-6">
+        <%=f.fields_for :message_user do |mu| %>
+          <%=mu.select :profile , Profile.all.collect { |p| p.name}, include_blank: true %>
+        <%end %>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col">
+        <%=link_to "Back", inbox_messages_path %>
+      </div>
+      <div class="col-6">
+        <%= f.submit "Send", method: :post %>
+      </div>
+
+
+    </div>
+  <% end %>
+</div>

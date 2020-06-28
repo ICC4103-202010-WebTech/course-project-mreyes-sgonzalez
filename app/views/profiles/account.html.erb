@@ -29,11 +29,21 @@
     </div>
 
     <div class="card-body">
-      <p><%= @current_profile.profile.name %></p>
-      <p><%= @current_profile.profile.last_name %></p>
-      <p><%= @current_profile.profile.dob %></p>
-      <p><%= @current_profile.profile.phone %></p>
-      <p><%= @current_profile.profile.address %></p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <b>Name:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.name %></p>
+      <hr>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <b>Last Name:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.last_name %></p>
+      <hr>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <b>Date of Birth:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.dob %></p>
+      <hr>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <b>Phone:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.phone %></p>
+      <hr>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; <b>Address:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.address %></p>
+      <hr>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
           <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Edit", edit_profile_path(@current_profile) %></button>
@@ -107,4 +117,3 @@
     </div>
   </div>
 </div>
-

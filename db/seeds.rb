@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # USERS
-user1 = User.create!(email: "email1@gmail.com", password: "abc12d3", username: "username1", admin: true)
+  user1 = User.create!(email: "email1@gmail.com", password: "abc12d3", username: "username1", admin: true)
 user2 = User.create!(email: "email2@gmail.com", password: "abc12e3", username: "username2", admin: false)
 user3 = User.create!(email: "email3@gmail.com", password: "abc1w23", username: "username3", admin: false)
 user4 = User.create!(email: "email4@gmail.com", password: "abc12e3", username: "username4", admin: false)
@@ -28,10 +28,12 @@ profile7 = Profile.create!(user_id: user7.id, name: "Timoti", last_name: "Nock",
 profile8 = Profile.create!(user_id: user8.id, name: "Rodolf", last_name: "Kings", phone: "82789123", dob: Date.new(2020, 01, 01), address: "way8")
 
 # MESSAGE_USER_ID
-message_user_id1 = MessageUser.create!(user_id: user1.id)
+message_user_id1 = MessageUser.create!(user_id: user2.id)
+message_user_id2 = MessageUser.create!(user_id: user1.id)
 
 # MESSAGE
 message1 = Message.create!(user_id: user1.id, message: "Hello", message_user_id: message_user_id1.id)
+message2 = Message.create!(user_id: user2.id, message: "Hello", message_user_id: message_user_id2.id)
 
 # RESOURCE
 resource1 = Resource.create!(file_type: ".pdf", file: "SomeFile1")

@@ -1,16 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-
-
 <div class="card-deck" id="centre-data-profile">
   <div class="card">
     <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
-    <div class="card-body">
-      <p class="card-text" id="text-div-black"><%= @profile.name %></p>
-      <p class="card-text" id="text-div-black"><%= @profile.last_name %></p>
-      <p class="card-text" id="text-div-black"><%= @profile.dob %></p>
-      <p class="card-text" id="text-div-black"><%= @profile.phone %></p>
-      <p class="card-text" id="text-div-black"><%= @profile.address %></p>
+    <div class="card-body profile-show">
+      <p><b>Name:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.name %></p>
+      <hr>
+      <p><b>Last Name:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.last_name %></p>
+      <hr>
+      <p><b>Date of Birth:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.dob %></p>
+      <hr>
+      <p><b>Phone:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.phone %></p>
+      <hr>
+      <p><b>Address:</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @current_profile.profile.address %></p>
+      <hr>
       <div class="d-flex justify-content-between align-items-center">
         <% if current_user.admin %>
           <div class="btn-group">

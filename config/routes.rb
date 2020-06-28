@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/search' => 'search#search', as: :search
   get 'document/terms_of_service' => 'documents#tos'
   get 'document/use_policy' => 'documents#aup'
+
   post 'organizations/new', to: "organizations#create"
 
   # Limit possible actions on resources to index and show...
@@ -24,6 +25,14 @@ Rails.application.routes.draw do
       resources :events do
         resources :comments
       end
+    end
+  end
+
+
+  resource :messages do
+    collection do
+      get :inbox
+      get :new_messages
     end
   end
 
@@ -37,6 +46,7 @@ Rails.application.routes.draw do
 
   resources :organizations
   resources :profiles   #, only: [:show, :index, :edit]
+
   resources :events, defaults: { format: :html }
   resources :comments, defaults: { format: :html }
   resources :document do

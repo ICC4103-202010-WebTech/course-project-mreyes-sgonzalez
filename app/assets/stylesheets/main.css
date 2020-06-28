@@ -202,28 +202,6 @@ EVENT SHOW
 
 /******************* E4  ******************************
  */
-
-/*SEARCH*/
-.col-sm-4-search{
-    position: relative;
-    background: #007bff;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.search-position{
-    position: relative;
-    left: 72%;
-}
-.card-results { position: relative; left: 11%; display: -ms-flexbox; display: flex; -ms-flex-direction: column;
-    flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem; }
-.results-scroll{ height: 100px; overflow-y: scroll; }
-
-
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------*/
 .card-text-black-text{ color: black;}
 p {font-family: Georgia, sans-serif;}
@@ -233,41 +211,33 @@ p {font-family: Georgia, sans-serif;}
 .btn-outline-secondary#view-edit-button a {color: #ff6514;text-decoration:none;}
 .profile-name a{color: white;text-decoration:none;}
 
-
-
-
-.organization-index-card{
-    background: #434343;
-}
-.organization-index-card p {
-    color: #b0b0b0;
-}
-
-.organization-show-card{background: #b0b0b0;}
-.organization-show-scroll{background: #434343;}
-.organization-show-scroll option{color: #b0b0b0;}
-
-.event-show-background{
-    background: #434343;
-}
-.event-show-text-color{
-    color: #b0b0b0;
-}
-#event-show-div-3{
+/*INBOX*/
+.inbox{
     position: relative;
-    left: 11.5%;
-    background: #434343;
-    color: #434343;
+    height: 550px;
+    left: 12%;
+    background: #2E2F30;
+    border-radius: 2%;
 }
+.message-title{
+    font-family: Kalam;
+    font-size: 450%;
+}
+.mail-box{
+    position: relative;
+    top: 10%;
+    left: 7%;
+}
+.information{
+    position: relative;
+    top: 10%;
+}
+.message-scroll{height: 300px;overflow-y: scroll;}
+
+
 
 /*SING-IN*/
-.sing-in{
-    position: relative;
-    left: 12%;
-    background: #333333;
-}
-
-
+.sing-in{position: relative;left: 12%;background: #333333;}
 .card-sign-in{ border-radius: 10%;color: white;background: #2E2F30;}
 .card-body-sign-in{background: #2E2F30;}
 .card-sign-in-form{position: relative;left: 50%;display: -ms-flexbox;display: flex;
@@ -278,8 +248,6 @@ p {font-family: Georgia, sans-serif;}
 .card-sign-up-form{position: relative;left: 50%;display: -ms-flexbox;display: flex;
     -ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;color: white;
     background: #2E2F30;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.125);border-radius: 0.25rem;}
-
-
 
 /*HOME*/
 #home-photo-background{ background-image: url("home-6.jpg"); position: relative; left: 13%; }
@@ -293,8 +261,16 @@ p {font-family: Georgia, sans-serif;}
 /*EVENTS*/
 .event-index-card{background: #434343;}
 .event-index-card p {color: #b0b0b0;}
+.comments-button{width: 6.5%;}
+.event-comment-scroll{height: 300px;overflow-y: scroll;}
+.event-show-background{background: #434343;}
+.event-show-text-color{color: #b0b0b0;}
+#event-show-div-3{position: relative;left: 11.5%;background: #434343;color: #434343;}
 
 /*PROFILES*/
+.profile-show p {
+    color: black;
+}
 
 /*ORGANIZATION-SHOW*/
 .list-and-publicevents{ position: relative; background: #4e555b; }
@@ -303,6 +279,11 @@ p {font-family: Georgia, sans-serif;}
 .organization-show{ position: relative; left: 10%; background: #4e555b; }
 .card-header-organization-list-user{ background: #383d41; }
 #button-organization-show{ position: relative; left: 4%; }
+.organization-index-card{background: #434343;}
+.organization-index-card p {color: #b0b0b0;}
+.organization-show-card{background: #b0b0b0;}
+.organization-show-scroll{background: #434343;}
+.organization-show-scroll option{color: #b0b0b0;}
 
 /*ACCOUNT-SHOW*/
 .row-account{ display: block; position: relative; left: 10%; background: #202122}
@@ -310,4 +291,10 @@ p {font-family: Georgia, sans-serif;}
 .card-account-event-invited{ background: #2e2e2e; }
 .account-line{ background: #2E2F30; }
 
-
+/*SEARCH*/
+.col-sm-4-search{position: relative;background: #007bff;width: 100%;padding-right: 15px;padding-left: 15px;}
+.search-position{position: relative;left: 72%;}
+.card-results { position: relative; left: 11%; display: -ms-flexbox; display: flex; -ms-flex-direction: column;
+    flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem; }
+.results-scroll{ height: 100px; overflow-y: scroll; }

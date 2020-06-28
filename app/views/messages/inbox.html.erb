@@ -1,0 +1,45 @@
+<div class="inbox">
+  <div class="container mt-4  mail-box">
+    <div class="row justify-content-between">
+      <div class="col-4">
+        <h1 class="message-title"><b>Messages</b></h1>
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-light"><%=link_to "New Message", new_messages_path %></button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-4 information">
+    <div class="col">
+      <%if !@messages_send.nil? %>
+        <% @messages_send.each do |ms|%>
+          <div class="container bg-dark w-75 message-scroll">
+            <div class="row">
+              <div class="col">
+                From: <%=User.find(ms.user_id).username %>
+              </div>
+              <div class="col">
+                To: <%=User.find(MessageUser.find(ms.message_user_id).user_id).username %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                Message: <%=ms.message %>
+                <hr>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%if !@messages_recieved.nil? %>
+        <% @messages_recieved.each do |mr|%>
+          <div class="container">
+          </div>
+        <% end %>
+      <%end %>
+    </div>
+  </div>
+</div>
+
