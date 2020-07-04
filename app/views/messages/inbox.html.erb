@@ -13,15 +13,18 @@
 
   <div class="container mt-4 information">
     <div class="col">
-      <%if !@messages_send.nil? %>
-        <% @messages_send.each do |ms|%>
-          <div class="container bg-dark w-75 message-scroll">
+      <div class="container bg-dark w-75 message-scroll">
+        <%if !@messages_send.nil? %>
+          <% @messages_send.each do |ms|%>
             <div class="row">
               <div class="col">
                 From: <%=User.find(ms.user_id).username %>
               </div>
               <div class="col">
                 To: <%=User.find(MessageUser.find(ms.message_user_id).user_id).username %>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-danger"> - </button>
               </div>
             </div>
             <div class="row">
@@ -30,15 +33,16 @@
                 <hr>
               </div>
             </div>
-          </div>
+          <% end %>
+
         <% end %>
-      <% end %>
-      <%if !@messages_recieved.nil? %>
+        <%if !@messages_recieved.nil? %>
         <% @messages_recieved.each do |mr|%>
           <div class="container">
           </div>
         <% end %>
       <%end %>
+      </div>
     </div>
   </div>
 </div>

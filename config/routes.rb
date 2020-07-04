@@ -56,6 +56,8 @@ Rails.application.routes.draw do
     end
   end
 
+  post '/messages/new', to: "messages#create"
+
   post 'organizations/new', to: "organizations#create"
   post 'organizations/add_member', to: "organizations#add_member"
 end
