@@ -9,12 +9,15 @@ class Event < ApplicationRecord
   #has_one :event_list_organization
   has_many :event_list_users
 
-  has_many_attached :images
+  has_one_attached :location_image
+  has_one_attached :image
   has_one_attached :file
   has_one_attached :video
 
   accepts_nested_attributes_for :user
   accepts_nested_attributes_for :comments
+
+
 
 
   #belongs_to :organization, through: :event_list_organization

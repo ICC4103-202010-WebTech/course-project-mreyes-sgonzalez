@@ -8,15 +8,25 @@
       </li>
       <li class="list-group-item event-show-background">
         <h2 class="event-show-text-color">Location: <%= @events.location  %></h2>
-        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <% if @events.location_image.attached?%>
+          <%= image_tag(@events.location_image, class: "card-img-top")%>
+        <%else %>
+          <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background:
+              "#55595c", color: "#eceeef")%>
+        <%end %>
       </li>
       <li class="list-group-item event-show-background">
         <h2 class="event-show-text-color">Attached Files</h2>
         <p class="event-show-text-color">In this part you can download a PDF</p>
       </li>
       <li class="list-group-item event-show-background">
-        <h2 class="event-show-text-color">Images:</h2>
-        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <h2 class="event-show-text-color">Image:</h2>
+        <% if @events.image.attached?%>
+          <%= image_tag(@events.image, class: "card-img-top")%>
+        <%else %>
+          <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background:
+              "#55595c", color: "#eceeef")%>
+        <%end %>
       </li>
       <li class="list-group-item event-show-background">
         <% if current_user.admin %>

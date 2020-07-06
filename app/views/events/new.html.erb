@@ -1,119 +1,78 @@
-
-
 <div class="container">
   <h1>New Event</h1>
   <%= form_with model: @event do |form| %>
-  <div class="row">
-    <div class="col-6 ">
-      <div class="form-group">
-        <%= form.label :name %>
-        <%= form.text_field :name, class: "form-control" %>
-      </div>
-    </div>
-    <div >
-      <div class="form-check ">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Private Event
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :description %>
-        <%= form.text_area :description, class: "form-control" %>
-      </div>
-    </div>
-  </div>
-
     <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :location %>
-        <%= form.text_area :location, class: "form-control" %>
+      <div class="col-6 ">
+
+        <div class="form-group">
+          <%= form.label :user_id %>
+          <%= form.text_field :user_id, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div >
+          <%= form.label :private %>
+          <%= form.text_field :private, class: "form-control" %>
+        </div>
+
+        <div >
+          <%= form.label :event_flag %>
+          <%= form.text_field :event_flag, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :location %>
+          <%= form.text_area :location, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :location_image %>
+          <%= form.file_field :location_image, class: "form-control-file" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :image %>
+          <%= form.file_field :image, class: "form-control-file" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :file %>
+          <%= form.file_field :file, class: "form-control-file" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :video %>
+          <%= form.file_field :video, class: "form-control-file" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :date %>
+          <%= form.datetime_local_field :date %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :resource_id %>
+          <%= form.text_field :resource_id, class: "form-control" %>
+        </div>
       </div>
     </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :images %>
-        <%= form.file_field :image, class: "form-control-file" %>
+    <div class="row top-buffer">
+      <div class="col-2">
+        <%= form.submit "Create Event", class: ["btn", "btn-primary"] %>
+      </div>
+      <div class="col-2 offset-3">
+        <%= link_to 'Back', events_path,class:["btn","btn-secondary"] %>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :file %>
-        <%= form.file_field :file, class: "form-control-file" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :video %>
-        <%= form.file_field :video, class: "form-control-file" %>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :start_date_option %>
-        <%= form.datetime_local_field :start_date %>
-        <button class="btn btn-primary">Add Date</button>
-      </div>
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <label>Invite Your Guests</label>
-      <select class="custom-select" multiple>
-      <% @guests.each do |guest| %>
-        <option selected><%=guest.name %> <%=guest.last_name  %></option>
-      <% end  %>
-    </select>
-    <button class="btn btn-primary top-buffer offset-9  ">Invite Guest </button>
-    </div>
-
-  </div>
-  <div class="row top-buffer">
-    <div class="col-6">
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile">
-        <label class="custom-file-label" for="customFile">Choose file</label>
-      </div>
-    </div>
-  </div>
-  <div class="row top-buffer">
-    <div class="col-2">
-      <%= form.submit "Create Event", class: ["btn", "btn-primary"] %>
-
-    </div>
-    <div class="col-2 offset-3">
-      <%= link_to 'Back', events_path,class:["btn","btn-secondary"] %>
-    </div>
-  </div>
   <% end %>
 </div>
-
-
-
-
-
 

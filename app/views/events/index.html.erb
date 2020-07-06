@@ -23,7 +23,12 @@
   <% @events.each do |event| %>
     <div class="col-md-4" id="center-div-home">
       <div class="card mb-4 shadow-sm event-index-card">
-        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <% if event.image.attached?%>
+          <%= link_to image_tag(event.image, class: "card-img-top"), url_for(event)%>
+        <%else %>
+          <%= link_to image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background:
+              "#55595c", color: "#eceeef"), url_for(event)  %>
+        <%end %>
         <div class="card-body">
           <p class="card-text" id="title"><%= link_to event.title, event %></p>
           <p class="card-text"><%= event.description %></p>
