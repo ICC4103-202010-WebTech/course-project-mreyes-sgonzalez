@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event_id = Event.find(params[:id]).id
     @events = Event.find(params[:id])
     @event_user_name = @events.user.profile.name
     @event_user_last_name = @events.user.profile.last_name
@@ -80,6 +81,6 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.fetch(:event, {}).permit(:title, :description, :event_flag, :user_id, :private,
-                                      :location, :date, :location_image, :image, :video_clip, :resource_id)
+                                      :location, :date, :location_image, :image, :file, :video_clip, :resource_id)
     end
 end

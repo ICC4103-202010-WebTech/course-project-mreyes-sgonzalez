@@ -31,7 +31,7 @@
             <td><%= profile.last_name %></td>
 
             <% if current_user.admin%>
-              <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "View", profile %></button> </td>
+              <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "View", {:action=>"show", :controller=>"profiles", :id=>profile.id} %></button> </td>
               <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "Edit", edit_profile_path(profile) %></button> </td>
             <% elsif current_user %>
               <td> <button type="button" class="btn btn-outline-secondary" id="view-edit-button"><%= link_to "View", profile %></button> </td>
