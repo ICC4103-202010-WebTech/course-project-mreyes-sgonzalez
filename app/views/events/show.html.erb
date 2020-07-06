@@ -33,6 +33,11 @@
         <%end %>
       </li>
       <li class="list-group-item event-show-background">
+        <% if current_user.id == @events.user_id %>
+          <h2 class="event-show-text-color">Invite</h2>
+          <p class="event-show-text-color">If you want to invite an user pleas press the button be allow</p>
+          <button type="button" class="btn btn-outline-primary">Invite</button>
+        <% end %>
         <% if current_user.admin %>
           <h2 class="event-show-text-color">Invite</h2>
           <p class="event-show-text-color">If you want to invite an user pleas press the button be allow</p>
@@ -59,6 +64,9 @@
       <li class="list-group-item event-show-background">
         <div class="card" id="div-event-list-user">
           <h2 class="event-show-text-color">&nbsp;&nbsp;&nbsp;Participant list:</h2>
+          <% if current_user.id == @events.user_id %>
+            <td><button type="button" class="btn btn-outline-success">Add</button></td>
+          <% end %>
           <% if current_user.admin %>
             <td><button type="button" class="btn btn-outline-success">Add</button></td>
           <% end %>
@@ -102,21 +110,21 @@
 
       <li class="list-group-item event-show-background">
         <h2 class="event-show-text-color">Date Vote</h2>
-        <p class="event-show-text-color"><%= Time.now %> this will en in 5 days!</p>
+        <p class="event-show-text-color"><%= Time.now %> this will end in 5 days!</p>
         <p class="event-show-text-color">Please choose the date option that you prefer</p>
-        <div class="form-check event-show-background">
+        <div class="form-check event-show-background date-vote">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">6-7-20 Date</label>
+          <label class="form-check-label" for="defaultCheck1">6-8-20 Date</label>
         </div>
-        <div class="form-check event-show-background">
+        <div class="form-check event-show-background date-vote">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-          <label class="form-check-label" for="defaultCheck2">23-6-20 Date</label>
+          <label class="form-check-label" for="defaultCheck2">23-10-20 Date</label>
         </div>
-        <div class="form-check event-show-background">
+        <div class="form-check event-show-background date-vote">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">11-9-20 Date</label>
         </div>
-        <div class="form-check event-show-background">
+        <div class="form-check event-show-background date-vote">
           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
           <label class="form-check-label" for="defaultCheck1">5-12-20 Date</label>
         </div>
@@ -124,6 +132,18 @@
           <button type="button" class="btn btn-outline-warning btn-sm">Send</button>
         </div>
       </li>
+
+      <% if current_user.id == @events.user_id %>
+        <li class="list-group-item event-show-background">
+          <h3 class="event-show-text-color">Options for the event:</h3>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Edit",  edit_event_path(@events) %></button>
+              <button type="button" class="btn btn-outline-danger">Delete</button>
+            </div>
+          </div>
+        </li>
+      <% end %>
 
       <% if current_user.admin %>
         <li class="list-group-item event-show-background">

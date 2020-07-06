@@ -142,11 +142,11 @@ ActiveRecord::Schema.define(version: 2020_07_06_014351) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "name", default: "name", null: false
-    t.string "last_name", default: "last_name", null: false
-    t.string "phone", default: "phone", null: false
-    t.date "dob", default: "2020-01-01", null: false
-    t.string "address", default: "address", null: false
+    t.string "name", null: false
+    t.string "last_name", null: false
+    t.string "phone", null: false
+    t.date "dob", null: false
+    t.string "address", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
