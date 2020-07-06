@@ -3,5 +3,5 @@ class Organization < ApplicationRecord
   has_many :event_list_organizations , dependent: :delete_all
   #has_many :users, through: member
   has_one :resource
-
+  has_one_attached :image
 end

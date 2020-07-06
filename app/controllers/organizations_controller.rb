@@ -51,7 +51,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations
   # POST /organizations.json
   def create
-    @organization = Organization.new(name: params[:name], description: params[:description])
+    @organization = Organization.new(organization_params)
 
     respond_to do |format|
       if @organization.save
@@ -107,6 +107,6 @@ class OrganizationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def organization_params
-      params.fetch(:organization, {}).permit(:name, :description)
+      params.fetch(:organization, {}).permit(:name, :description, :image)
     end
 end

@@ -1,6 +1,11 @@
 <div class="organization-show">
   <div class="card mb-3 organization-show-card">
-    <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+    <% if @organization.image.attached?%>
+      <%= image_tag(@organization.image, class: "card-img-top")%>
+    <%else %>
+      <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background:
+          "#55595c", color: "#eceeef")%>
+    <%end %>
     <div class="card-body">
       <p class="card-text" id="text-div-blue"><%= "Name of the organization:"%></p>
       <p class="card-text" id="text-div-black"><%= @organizations.name %></p>

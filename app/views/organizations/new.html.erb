@@ -7,7 +7,7 @@
 </div>
 
 <div>
-  <%= form_with model: @event do |form| %>
+  <%= form_with model: @organization do |form| %>
     <div class="form-group">
       <%= form.label :name %>
       <%= form.text_field :name, class: "form-control" %>
@@ -15,6 +15,10 @@
     <div class="form-group">
       <%= form.label :description %>
       <%= form.text_area :description, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image, class: "custom-file"  %>
     </div>
      <div>
        <%= form.submit "Create", class: ["btn", "btn-primary"] %>
