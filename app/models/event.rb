@@ -12,7 +12,7 @@ class Event < ApplicationRecord
   has_one_attached :location_image
   has_one_attached :image
   has_one_attached :file
-  has_one_attached :video
+  has_one_attached :video_clip
 
   accepts_nested_attributes_for :user
   accepts_nested_attributes_for :comments

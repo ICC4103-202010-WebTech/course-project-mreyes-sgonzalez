@@ -88,7 +88,12 @@
 
       <li class="list-group-item event-show-background">
         <h2 class="event-show-text-color">Videos:</h2>
-        <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef") %>
+        <% if @events.video_clip.attached?%>
+          <%= video_tag(url_for(@events.video_clip), class: "card-img-top", controls: '')%>
+        <%else %>
+          <%= image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background:
+              "#55595c", color: "#eceeef")%>
+        <%end %>
       </li>
 
       <li class="list-group-item event-show-background">
