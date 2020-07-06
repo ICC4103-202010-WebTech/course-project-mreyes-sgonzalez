@@ -1,78 +1,65 @@
-<div class="container">
-  <h1>New Event</h1>
-  <%= form_with model: @event do |form| %>
-    <div class="row">
-      <div class="col-6 ">
-
-        <div class="form-group">
-          <%= form.label :user_id %>
-          <%= form.text_field :user_id, class: "form-control" %>
+<div class="card-new-event-form" style="width: 28rem;">
+  <div class="card-body">
+    <h1 class="card-title">New Event</h1>
+    <%= form_with model: @event do |form| %>
+      <div class="field">
+        <%= form.hidden_field :user_id %>
+        <%= form.hidden_field :user_id, class: "form-control", value: @current_profile.profile.user_id %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :private %>
+        <%= form.check_box :private, {class: "form-control", value: true}%>
+      </div>
+      <div class="field new-event">
+        <%= form.hidden_field :event_flag %>
+        <%= form.hidden_field :event_flag, class: "form-control", value: false %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :description %>
+        <%= form.text_area :description, class: "form-control" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :location %>
+        <%= form.text_field :location, class: "form-control" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :image %>
+        <%= form.file_field :image, class: "form-control-file" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :location_image %>
+        <%= form.file_field :location_image, class: "form-control-file" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :file %>
+        <%= form.file_field :file, class: "form-control-file" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :video_clip %>
+        <%= form.file_field :video_clip, class: "form-control-file" %>
+      </div>
+      <div class="field new-event">
+        <%= form.label :date %>
+        <%= form.datetime_local_field :date %>
+      </div>
+      <div class="field new-event">
+        <%= form.hidden_field :resource_id %>
+        <%= form.hidden_field :resource_id, class: "form-control", value: 1 %>
+      </div>
+      <div class="row top-buffer">
+        <div class="col-2">
+          <%= form.submit "Create Event", class: ["btn", "btn-primary"] %>
         </div>
-
-        <div class="form-group">
-          <%= form.label :title %>
-          <%= form.text_field :title, class: "form-control" %>
-        </div>
-
-        <div >
-          <%= form.label :private %>
-          <%= form.text_field :private, class: "form-control" %>
-        </div>
-
-        <div >
-          <%= form.label :event_flag %>
-          <%= form.text_field :event_flag, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :description %>
-          <%= form.text_area :description, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :location %>
-          <%= form.text_area :location, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :location_image %>
-          <%= form.file_field :location_image, class: "form-control-file" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :image %>
-          <%= form.file_field :image, class: "form-control-file" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :file %>
-          <%= form.file_field :file, class: "form-control-file" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :video_clip %>
-          <%= form.file_field :video_clip, class: "form-control-file" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :date %>
-          <%= form.datetime_local_field :date %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :resource_id %>
-          <%= form.text_field :resource_id, class: "form-control" %>
+        <div class="col-2 offset-3">
+          <%= link_to 'Back', events_path,class:["btn","btn-secondary"] %>
         </div>
       </div>
-    </div>
-    <div class="row top-buffer">
-      <div class="col-2">
-        <%= form.submit "Create Event", class: ["btn", "btn-primary"] %>
-      </div>
-      <div class="col-2 offset-3">
-        <%= link_to 'Back', events_path,class:["btn","btn-secondary"] %>
-      </div>
-    </div>
-  <% end %>
+
+    <% end %>
+  </div>
 </div>
 

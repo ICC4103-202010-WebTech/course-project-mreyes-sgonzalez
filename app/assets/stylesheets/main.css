@@ -267,10 +267,15 @@ p {font-family: Georgia, sans-serif;}
 .event-show-text-color{color: #b0b0b0;}
 #event-show-div-3{position: relative;left: 11.5%;background: #434343;color: #434343;}
 
-/*PROFILES*/
-.profile-show p {
-    color: black;
+.new-event{
+    padding: 2%;
 }
+.card-new-event-form{position: relative;left: 40%;display: -ms-flexbox;display: flex;
+    -ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;color: white;
+    background: #2E2F30;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.125);border-radius: 0.25rem;}
+
+/*PROFILES*/
+.profile-show p {color: black;}
 
 /*ORGANIZATION-SHOW*/
 .list-and-publicevents{ position: relative; background: #4e555b; }
