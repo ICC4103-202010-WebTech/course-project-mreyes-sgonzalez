@@ -303,3 +303,27 @@ p {font-family: Georgia, sans-serif;}
     flex-direction: column; min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0.25rem; }
 .results-scroll{ height: 100px; overflow-y: scroll; }
+
+
+.message-send{
+    position: relative;
+    height: 400px;
+    left: 12%;
+    background: #2E2F30;
+    border-radius: 2%;
+}
+.message{
+    background: #202122;
+}
+.btn-send{
+    padding: 2%;
+}
+.message-send-title{
+    font-family: Kalam;
+    padding: 2%;
+}
+
+.add-button-comment{
+    position: relative;
+    left: 2.3%;
+}
